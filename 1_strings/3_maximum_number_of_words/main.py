@@ -11,3 +11,9 @@ pytest ./3_maximum_number_of_words/test.py
 
 def get_max_number_of_words_from_sentences(sentences: list[str]) -> bool:
     """Пишите ваш код здесь."""
+    max_length_split_sentence = 0
+    for i in sentences:
+        length_split_sentence = len(i.split())
+        if length_split_sentence > max_length_split_sentence:
+            max_length_split_sentence = length_split_sentence
+    return max_length_split_sentence
