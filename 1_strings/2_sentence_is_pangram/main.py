@@ -6,7 +6,13 @@
 Проверка:
 pytest ./2_sentence_is_pangram/test.py
 """
-
+import string
 
 def is_sentence_is_pangram(sentence: str) -> bool:
     """Пишите ваш код здесь."""
+    character_of_sentence = set(char for char in sentence.lower())
+    alphabet = {char gitfor char in string.ascii_lowercase}
+    if character_of_sentence == alphabet:
+        return True
+    else:
+        return False
