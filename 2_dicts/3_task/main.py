@@ -16,3 +16,5 @@ def format_phone(phone_number: str) -> dict[str, int]:
     elif correct_phone_numbers[0] == '9':
         return ('8 ('+correct_phone_numbers[0:3]+') '+ correct_phone_numbers[3:6]+ '-'+ correct_phone_numbers[6:8]+
               '-'+correct_phone_numbers[8:10])
+    else:
+        return correct_phone_numbers
