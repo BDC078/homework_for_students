@@ -73,4 +73,4 @@ def divided_by(right: int):
     if right == 0:
         print('На ноль делить нельзя!')
     else:
-        return lambda left: eft // right
+        return lambda left: left // right
