@@ -10,14 +10,17 @@ def chain(*iterables: Iterable[T]) -> Generator[T, None, None]:
             yield elem
 
 class Chain:
-    def __init__(self, *iterables: Iterable[T]):
-        """Реализуйте класс ниже"""
-        self.iter = iterables
+    def __init__(self, *iterables):
+        self.iterables = iterables
+        self.index = 0
 
     def __iter__(self):
-        for iter in self.iter:
-            for elem in iter:
-                yield elem
+        return self
 
     def __next__(self):
-        return self
+        if self.index == 0 or self.index >= len(self.iterables):
+            raise StopIteration
+        else:
+            res = self.iterables[self.index]
+            self.index += 1
+            return res
